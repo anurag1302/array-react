@@ -15,19 +15,30 @@ const books = [
   },
 ];
 
+// function BookList() {
+//   return (
+//     <section className="bookList">
+//       {books.map((book) => {
+//         console.log(book);
+//         const { img, title, author } = book;
+//         return <Book img={img} title={title} author={author} />;
+//       })}
+//     </section>
+//   );
+// }
+
 function BookList() {
   return (
     <section className="bookList">
       {books.map((book) => {
-        console.log(book);
-        const { img, title, author } = book;
-        return <Book img={img} title={title} author={author} />;
+        return <Book book={book} />;
       })}
     </section>
   );
 }
 
-const Book = ({ img, title, author }) => {
+const Book = (props) => {
+  const { img, title, author } = props.book;
   return (
     <article className="book">
       <img src={img} alt="book"></img>
